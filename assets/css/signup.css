@@ -31,6 +31,7 @@
 .signup form span{
 	padding-left: 15px;
 	margin-bottom: 15px;
+	
 }
 
 .signup #submit{
@@ -40,4 +41,9 @@
     border-color: #EBB71F;
     border-right-style: inset;
     border-bottom-style: inset;
+}
+
+.error{
+	color:red;
+	 visibility: hidden;
 }

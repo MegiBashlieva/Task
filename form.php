@@ -26,7 +26,7 @@
 			<label>Password(6 or more characters)</label><br>
 			<input type="password" name="password" value = "<?= empty($_POST["password"]) ? "" : $_POST["password"]; ?>"><br>
 		
-			<span>By clicking Sign Up, you agree to <b>User Agreement, Privacy Policy</b> and <b>Cookie Policy</b></b></span>
+			<span>By clicking Sign Up, you agree to <b>User Agreement, Privacy Policy</b> and <b>Cookie Policy</b></span>
 		
 			<input  id="submit" type="submit" name="submit" value="Sign Up">
 		
