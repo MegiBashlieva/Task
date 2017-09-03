@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,6 +15,15 @@
 </head>
 <body>
 
+<script type="text/javascript">
+var errorLogIn = <?php echo json_encode(isset($_SESSION['message']) ? $_SESSION["message"]:"" ); ?>;
+
+if(errorLogIn){
+	alert(errorLogIn)
+}
+<?php session_destroy();?>
+</script>
+
 <div id="content">
 
 <div id="header">
@@ -20,7 +32,7 @@
 	</div>
 	
 	<div id="right-header">
-		<form action="" method="post">
+		<form action="logInUser.php" method="post">
 			<input type="text" name="emailSignIn" placeholder= "Email">
 			<input type="password" name="passwordSignIn" placeholder="Password">
 			<input  id="submitIn" type="submit" name="submitIn" value="Sign In">
@@ -33,18 +45,18 @@
 	
 		<form id="upForm" action="javascript:void(0)" method="post">
 			<label >First name</label><span class="error">Please enter First name</span>
-			<input type="text" id="firstName" name="firstName" value = "<?= empty($_POST["firstName"]) ? "" : $_POST["firstName"]; ?>"><br>
+			<input type="text" id="firstName" name="firstName"><br>
 			
 			<label>Last name</label><span class="error">Please enter Last name</span>
-			<input type="text" id="lastName" name="lastName" value = "<?= empty($_POST["lastName"]) ? "" : $_POST["lastName"]; ?>"><br>
+			<input type="text" id="lastName" name="lastName"><br>
 			
 			<label>Email</label><span class="error">Please enter a valid email</span>
-			<input type="text" id="signUpEmail" name="email" value = "<?= empty($_POST["email"]) ? "" : $_POST["email"]; ?>"><br>
+			<input type="text" id="signUpEmail" name="email"><br>
 			
 			<label>Password(6 or more characters)</label><span class="error">Password must be 6 or more characters </span>
-			<input type="password" id="signUpPass" name="password" value = "<?= empty($_POST["password"]) ? "" : $_POST["password"]; ?>"><br>
+			<input type="password" id="signUpPass" name="password"><br>
 		
-			<span>By clicking Sign Up, you agree to User Agreement, Privacy Policy and Cookie Policy</span>
+			<span id="agr">By clicking Sign Up, you agree to <b>User Agreement</b>, <b>Privacy Policy</b> and <b>Cookie Policy</b></span>
 		
 			<input  id="submit" type="submit" name="submit" value="Sign Up">
 		

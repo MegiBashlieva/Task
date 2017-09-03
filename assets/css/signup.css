@@ -1,7 +1,7 @@
 @CHARSET "UTF-8";
 
 .signup{
-	height: 410px;
+	height: 415px;
     width: 30%;
     background-color: #EEEEEE;
 	display: inline-block;
@@ -28,8 +28,11 @@
     border-style: groove;
     border-radius: 4.5px;
 }
-.signup form span{
-	padding-left: 15px;
+.signup form span#agr{
+	padding-left: 5px;
+	font-size: 13px;
+	display:block;
+	text-align:center;
 	margin-bottom: 15px;
 	
 }
@@ -46,4 +49,7 @@
 .error{
 	color:red;
 	 visibility: hidden;
+	 padding-left:10px;
+	 
+	
 }

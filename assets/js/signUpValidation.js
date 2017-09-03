@@ -60,18 +60,19 @@ document.addEventListener('DOMContentLoaded', function() {
 					  this.pass = pass.value;
 					}
 				var user = new User(firstName, lastName, email, pass);
-				
+				console.log("da");
 				var userJson=JSON.stringify(user);
 				
 				 $.post('addUserDB.php', {userJson },function(data) {  
 				
 					 var data = JSON.parse(data);
+					 console.log(data);
 					 if(data){
 						 alert("Registration successful!");
 						 
 						 
 					 }else{
-						 alert("Registration unsuccessful!");
+						 alert("Existing email!");
 					 }
 					 document.getElementById("upForm").reset();
 				 }, 'json');

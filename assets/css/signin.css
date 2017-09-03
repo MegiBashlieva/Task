@@ -9,6 +9,8 @@
 	height:20px;
 }
 #submitIn{
+	display:inline-block;
 	border: none;
 	height:20px;	
+	line-height: 18px;
 }
